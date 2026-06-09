@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>字体设计稿</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=ZCOOL+QingKe+HuangYou&family=Long+Cang&family=Cinzel:wght@400;700;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: linear-gradient(128deg, #F7E8E2 0%, #FAF0EA 30%, #FCF5EF 65%, #FDFAF7 100%);
+    min-height: 100vh;
+    padding: 40px 32px;
+    font-family: "PingFang SC", sans-serif;
+  }
+  h1.page-title {
+    font-family: "PingFang SC", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(45,26,16,0.45);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .card {
+    background: rgba(255,255,255,0.82);
+    border: 1px solid rgba(185,120,80,0.14);
+    border-radius: 16px;
+    padding: 28px 28px 22px;
+    box-shadow: 0 2px 12px rgba(180,100,50,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--stripe, #c97a4e);
+    opacity: 0.7;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--stripe, #c97a4e);
+    background: rgba(201,122,78,0.1);
+    padding: 3px 10px;
+    border-radius: 99px;
+    margin-bottom: 16px;
+  }
+  .eyebrow {
+    font-family: "Cinzel", serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    color: rgba(45,26,16,0.45);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .heading { margin-bottom: 10px; }
+  .sub {
+    font-size: 13px;
+    color: rgba(45,26,16,0.55);
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+  .label {
+    margin-top: 14px;
+    font-size: 11px;
+    color: rgba(45,26,16,0.35);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── A：宋体 300 · 最细笔锋，极奢 ── */
+  .v1a { --stripe: #d4a843; }
+  .v1a .heading {
+    font-family: "Noto Serif SC", serif;
+    font-weight: 300;
+    font-size: 40px;
+    color: #2d1a10;
+    letter-spacing: 0.06em;
+    line-height: 1.3;
+  }
+
+  /* ── B：宋体 400 · 笔锋清晰，雅致 ★ ── */
+  .v1b { --stripe: #c97a4e; }
+  .v1b .heading {
+    font-family: "Noto Serif SC", serif;
+    font-weight: 400;
+    font-size: 38px;
+    color: #2d1a10;
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+  }
+
+  /* ── C：站酷小薇 · 笔画细腻有设计感 ── */
+  .v1c { --stripe: #b87a5a; }
+  .v1c .heading {
+    font-family: "ZCOOL XiaoWei", "Noto Serif SC", serif;
+    font-weight: 400;
+    font-size: 40px;
+    color: #2d1a10;
+    letter-spacing: 0.05em;
+    line-height: 1.25;
+  }
+
+  /* ── D：宋体 500 · 笔锋+适中字重 ── */
+  .v1d { --stripe: #a85e35; }
+  .v1d .heading {
+    font-family: "Noto Serif SC", serif;
+    font-weight: 500;
+    font-size: 38px;
+    color: #2d1a10;
+    letter-spacing: 0.03em;
+    line-height: 1.25;
+  }
+
+  /* ── 方案二：马善政毛笔体 · 国风灵动 ── */
+  .v2 { --stripe: #c97a4e; }
+  .v2 .heading {
+    font-family: "Ma Shan Zheng", cursive;
+    font-weight: 400;
+    font-size: 42px;
+    color: #2d1a10;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+  }
+
+  /* ── 方案三：站酷小薇 · 极简优雅 ── */
+  .v3 { --stripe: #a85e35; }
+  .v3 .heading {
+    font-family: "ZCOOL XiaoWei", "PingFang SC", serif;
+    font-weight: 400;
+    font-size: 38px;
+    color: #2d1a10;
+    letter-spacing: 0.06em;
+    line-height: 1.25;
+  }
+
+  /* ── 方案四：Playfair Display + 思源宋 · 双语奢品 ── */
+  .v4 { --stripe: #d4a843; }
+  .v4 .heading {
+    font-family: "Noto Serif SC", serif;
+    font-weight: 300;
+    font-size: 34px;
+    color: #2d1a10;
+    letter-spacing: 0.1em;
+    line-height: 1.35;
+  }
+  .v4 .heading em {
+    font-family: "Playfair Display", "Georgia", serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    color: #c97a4e;
+    display: block;
+    margin-bottom: 4px;
+    letter-spacing: 0.12em;
+  }
+
+  /* ── 方案五：龙藏手写体 · 温柔手感 ── */
+  .v5 { --stripe: #e87899; }
+  .v5 .heading {
+    font-family: "Long Cang", cursive;
+    font-weight: 400;
+    font-size: 44px;
+    color: #2d1a10;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+  }
+
+  /* ── 方案六：思源宋体超细 · 极奢轻盈 ── */
+  .v6 { --stripe: #4ab8b0; }
+  .v6 .heading {
+    font-family: "Noto Serif SC", serif;
+    font-weight: 300;
+    font-size: 38px;
+    color: #2d1a10;
+    letter-spacing: 0.14em;
+    line-height: 1.3;
+  }
+
+  .recommend-tag {
+    position: absolute;
+    top: 14px; right: 16px;
+    font-size: 10px;
+    background: #2d1a10;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 99px;
+    letter-spacing: 0.06em;
+  }
+</style>
+</head>
+<body>
+<h1 class="page-title">首页 Hero 标题 · 字体方案对比</h1>
+<div class="grid">
+
+  <!-- A -->
+  <div class="card v1a">
+    <div class="badge">A · 极奢轻盈</div>
+    <div class="eyebrow">AI NAIL TRY-ON</div>
+    <div class="heading">找到适合今天的美甲</div>
+    <div class="sub">先挑 1–4 款，再上传一张手图生成试戴效果。</div>
+    <div class="label">Noto Serif SC 300 · 笔锋最锐 · 字距宽</div>
+  </div>
+
+  <!-- B -->
+  <div class="card v1b">
+    <span class="recommend-tag">★ 推荐</span>
+    <div class="badge">B · 雅致笔锋</div>
+    <div class="eyebrow">AI NAIL TRY-ON</div>
+    <div class="heading">找到适合今天的美甲</div>
+    <div class="sub">先挑 1–4 款，再上传一张手图生成试戴效果。</div>
+    <div class="label">Noto Serif SC 400 · 笔锋清晰 · 轻盈不纤弱</div>
+  </div>
+
+  <!-- C -->
+  <div class="card v1c">
+    <div class="badge">C · 设计感</div>
+    <div class="eyebrow">AI NAIL TRY-ON</div>
+    <div class="heading">找到适合今天的美甲</div>
+    <div class="sub">先挑 1–4 款，再上传一张手图生成试戴效果。</div>
+    <div class="label">站酷小薇 LOGO 体 · 笔画细腻有个性</div>
+  </div>
+
+  <!-- D -->
+  <div class="card v1d">
+    <div class="badge">D · 笔锋+适中</div>
+    <div class="eyebrow">AI NAIL TRY-ON</div>
+    <div class="heading">找到适合今天的美甲</div>
+    <div class="sub">先挑 1–4 款，再上传一张手图生成试戴效果。</div>
+    <div class="label">Noto Serif SC 500 · 笔锋可见 · 字重适中</div>
+  </div>
+
+</div>
+</body>
+</html>

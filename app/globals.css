@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── fonts ─────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── 字体 ── */
+  --font-sans:   "DM Sans", "Noto Sans SC", "PingFang SC", "Microsoft YaHei UI", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:   "DM Mono", ui-monospace, monospace;
+  --font-cinzel: "Cinzel", serif;
+
+  /* ── 颜色 token ── */
+  --accent:       #c97a4e;
+  --accent-light: #f5e6d8;
+  --accent-dark:  #a85e35;
+  --pink:         #e87899;
+  --pink-light:   #fde8ef;
+  --teal:         #4ab8b0;
+  --gold:         #d4a843;
+  --ink:          #2d1a10;
+  --ink-62:       rgba(45,26,16,0.62);
+  --ink-38:       rgba(45,26,16,0.38);
+  --card-bg:      rgba(255,255,255,0.82);
+  --card-bg-hover:rgba(255,255,255,0.96);
+  --border:       rgba(185,120,80,0.14);
+  --border-hover: rgba(185,120,80,0.28);
+
+  /* ── 圆角 ── */
+  --r-lg: 16px;
+  --r-md: 10px;
+  --r-sm: 6px;
+
+  /* ── 阴影 ── */
+  --shadow-sm: 0 2px 12px rgba(180,100,50,0.08);
+  --shadow-md: 0 8px 32px rgba(180,100,50,0.12);
+  --shadow-lg: 0 20px 60px rgba(180,100,50,0.14);
+
+  /* ── 缓动 ── */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring:    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Precise Try-On panel states ────────────────────────────────────────────── */
+
+@keyframes panel-pop-in {
+  from { opacity: 0.55; transform: scale(0.965) translateY(6px); }
+  to   { opacity: 1;    transform: scale(1)     translateY(0); }
+}
+
+/* active panel: pop-in + pulsing glow ring */
+.precise-panel-active {
+  animation: panel-pop-in 0.5s var(--ease-spring) both;
+  transition: opacity 0.4s var(--ease-spring), transform 0.4s var(--ease-spring), box-shadow 0.4s ease, filter 0.4s ease;
+}
+
+/* inactive panel: 纯透明度淡出 + 轻微缩小，保留色彩，不做灰化 */
+.precise-panel-inactive {
+  opacity: 0.38;
+  transform: scale(0.972);
+  transition: opacity 0.4s var(--ease-spring), transform 0.4s var(--ease-spring);
+}
+
+/* ── CTA breathe pulse ───────────────────────────────────────────────────────── */
+
+@keyframes cta-breathe {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(196,96,56,0); transform: scale(1); }
+  50%       { box-shadow: 0 0 0 6px rgba(196,96,56,0.18); transform: scale(1.025); }
+}
+.cta-breathe {
+  animation: cta-breathe 2.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* ── SVG stroke-draw (step check) ───────────────────────────────────────────── */
+
+@keyframes stroke-draw {
+  from { stroke-dashoffset: 1; opacity: 0; }
+  to   { stroke-dashoffset: 0; opacity: 1; }
+}
+.stroke-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  animation: stroke-draw 0.45s var(--ease-spring) both;
+}
+
+/* ── Catalog card staggered entrance ────────────────────────────────────────── */
+
+@keyframes card-in {
+  from { opacity: 0; transform: scale(0.90) translateY(16px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0); }
+}
+/* 筛选/搜索结果卡片：逐张弹入，每张间隔 35ms，最多算到第 16 张后延迟不再增加 */
+.nail-card,
+.home-pick-card {
+  animation: card-in 0.48s var(--ease-spring) both;
+  animation-delay: calc(min(var(--i, 0), 16) * 35ms);
+}
+
+/* ── Step connector line fill ────────────────────────────────────────────────── */
+
+@keyframes line-fill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.step-line-done {
+  transform-origin: left;
+  animation: line-fill 0.35s var(--ease-spring) both;
+}
+
+/* ── Hint bar attention pulse ────────────────────────────────────────────────── */
+
+@keyframes hint-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hint-in {
+  animation: hint-in 0.4s var(--ease-spring) both;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
+  /* 运营端同款：斜向奶油暖粉渐变，fixed 不随内容滚动 */
+  background: linear-gradient(
+    128deg,
+    #F7E8E2 0%,
+    #FAF0EA 30%,
+    #FCF5EF 65%,
+    #FDFAF7 100%
+  ) fixed;
+}
+
+/* ── 滚动条 ── */
+::-webkit-scrollbar       { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(180,100,50,0.20); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(180,100,50,0.36); }
+
+button,
+input {
+  font: inherit;
+}
+
+/* ── animations ─────────────────────────────────────────────────────────────── */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(207, 99, 56, 0); }
+  50%       { box-shadow: 0 0 0 6px rgba(207, 99, 56, 0.18); }
+}
+
+/* card entrance */
+.animate-card {
+  animation: scale-in 280ms var(--ease-out-expo) both;
+}
+
+/* modal overlay */
+.animate-overlay {
+  animation: fade-in 180ms ease both;
+}
+
+/* modal panel */
+.animate-modal {
+  animation: scale-in 240ms var(--ease-out-expo) both;
+}
+
+/* toast */
+.animate-toast {
+  animation: slide-up 260ms var(--ease-out-quart) both;
+}
+
+/* result image reveal */
+.animate-reveal {
+  animation: fade-in 400ms var(--ease-out-quart) both;
+}
+
+/* loading shimmer on skeletons */
+.animate-shimmer {
+  background: linear-gradient(90deg,
+    #FAF0EA 0%,
+    #F5E4D8 40%,
+    #FAF0EA 80%
+  );
+  background-size: 200% auto;
+  animation: shimmer 1.6s linear infinite;
+}
+
+/* ── reduced motion ─────────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── scrollbar-soft（运营端同款 5px）── */
+.scrollbar-soft::-webkit-scrollbar       { width: 5px; height: 5px; }
+.scrollbar-soft::-webkit-scrollbar-track { background: transparent; }
+.scrollbar-soft::-webkit-scrollbar-thumb { background: rgba(180,100,50,0.20); border-radius: 99px; }
+.scrollbar-soft::-webkit-scrollbar-thumb:hover { background: rgba(180,100,50,0.36); }
+
+/* ── 卡片基础（对齐运营端）── */
+.card-base {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  transition: background 220ms var(--ease-out-quart), box-shadow 220ms var(--ease-out-quart);
+}
+.card-base:hover {
+  background: var(--card-bg-hover);
+  box-shadow: var(--shadow-md);
+}
+
+/* ── 顶部导航对齐 ── */
+.topbar {
+  background: rgba(255,255,255,0.80) !important;
+  backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+/* ── 数字大值用 DM Mono ── */
+.num-display {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+@import "./legacy-user.css";

@@ -1,0 +1,173 @@
+
+> ai-nail-tryon-demo@0.1.0 dev
+> next dev -p 3027
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3027
+
+ ✓ Starting...
+ ✓ Ready in 3.5s
+ ○ Compiling /catalog ...
+ ✓ Compiled /catalog in 1988ms (500 modules)
+ GET /catalog 200 in 2240ms
+ GET /catalog 200 in 252ms
+ GET /catalog 200 in 77ms
+ ○ Compiling /quick-try-on ...
+ ✓ Compiled /recommend in 3.7s (573 modules)
+ ✓ Compiled /want-list in 406ms (576 modules)
+ GET /catalog 200 in 135ms
+ GET /recommend 200 in 70ms
+ GET /batch-results 200 in 81ms
+ GET /want-list 200 in 51ms
+ GET /catalog 200 in 37ms
+ GET /recommend 200 in 83ms
+ GET /catalog 200 in 68ms
+ ✓ Compiled in 3.9s (559 modules)
+ ○ Compiling / ...
+ ✓ Compiled / in 16.1s (568 modules)
+ ✓ Compiled in 2s (568 modules)
+ GET / 307 in 147ms
+ GET /catalog 200 in 106ms
+ ○ Compiling /quick-try-on ...
+ ✓ Compiled /quick-try-on in 668ms (300 modules)
+ ○ Compiling /precise-try-on ...
+ ✓ Compiled /precise-try-on in 2.8s (305 modules)
+ ✓ Compiled in 1979ms (295 modules)
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 3s (575 modules)
+ GET /_next/static/webpack/86aa34941c4a642a.webpack.hot-update.json 404 in 2661ms
+ GET /catalog 200 in 279ms
+ ✓ Compiled in 3.7s (589 modules)
+ ✓ Compiled in 812ms (296 modules)
+ ✓ Compiled in 1054ms (296 modules)
+ ✓ Compiled in 12s (589 modules)
+ GET /catalog 200 in 244ms
+ GET /catalog 200 in 104ms
+ ○ Compiling /style-library ...
+ ✓ Compiled /style-library in 1503ms (581 modules)
+ ○ Compiling /precise-try-on ...
+ ✓ Compiled /precise-try-on in 1137ms (303 modules)
+ ○ Compiling /api/style-detect ...
+ ✓ Compiled /api/style-detect in 1388ms (340 modules)
+ POST /api/style-detect 200 in 2184ms
+ ✓ Compiled /api/hand-detect in 573ms (332 modules)
+ ✓ Compiled (334 modules)
+ POST /api/nail-segment 413 in 1685ms
+ POST /api/hand-detect 200 in 1736ms
+ POST /api/nail-segment 413 in 148ms
+ POST /api/hand-detect 200 in 153ms
+ ○ Compiling /style-library ...
+ ✓ Compiled /style-library in 833ms (298 modules)
+ GET /style-library 200 in 1225ms
+ ○ Compiling /recommend ...
+ ✓ Compiled /recommend in 644ms (303 modules)
+ GET /batch-results 200 in 137ms
+ ✓ Compiled in 692ms (569 modules)
+ ✓ Compiled in 11.2s (569 modules)
+ ✓ Compiled in 936ms (298 modules)
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 3.2s (781 modules)
+ GET /catalog 200 in 248ms
+ GET /catalog 200 in 236ms
+ GET /want-list 200 in 347ms
+ GET /want-list 200 in 346ms
+ GET /style-library 200 in 98ms
+ GET /style-library 200 in 117ms
+ GET /catalog 200 in 90ms
+ GET /style-library 200 in 199ms
+ ○ Compiling /quick-try-on ...
+ ✓ Compiled /quick-try-on in 2.5s (338 modules)
+ GET /style-library 200 in 264ms
+ ○ Compiling /precise-try-on ...
+ ✓ Compiled /precise-try-on in 1604ms (343 modules)
+ ✓ Compiled in 2.2s (483 modules)
+ ✓ Compiled in 1166ms (483 modules)
+ ✓ Compiled in 870ms (483 modules)
+ ✓ Compiled in 1066ms (483 modules)
+ ✓ Compiled in 780ms (483 modules)
+ ✓ Compiled in 1078ms (483 modules)
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 974ms (781 modules)
+ GET /want-list 200 in 402ms
+ GET /want-list 200 in 406ms
+ GET /catalog 200 in 104ms
+ GET /style-library 200 in 215ms
+ GET /style-library 200 in 105ms
+ GET /style-library 200 in 113ms
+ GET /style-library 200 in 91ms
+ GET /catalog 200 in 155ms
+ GET /catalog 200 in 142ms
+ GET /catalog 200 in 103ms
+ GET /style-library 200 in 115ms
+ ✓ Compiled in 2.8s (794 modules)
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 2.1s (781 modules)
+ GET /catalog 200 in 444ms
+ GET /catalog 200 in 171ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 6s (784 modules)
+ ○ Compiling /quick-try-on ...
+ ✓ Compiled /quick-try-on in 1749ms (340 modules)
+ ✓ Compiled in 0ms (340 modules)
+ ✓ Compiled in 1ms (340 modules)
+ ✓ Compiled in 0ms (340 modules)
+ GET /catalog 200 in 2195ms
+ ✓ Compiled in 1ms (340 modules)
+ ✓ Compiled in 0ms (340 modules)
+ ✓ Compiled in 0ms (340 modules)
+ ✓ Compiled in 0ms (340 modules)
+ ✓ Compiled in 1ms (340 modules)
+ ✓ Compiled in 0ms (340 modules)
+ GET /style-library 200 in 1677ms
+ ○ Compiling /precise-try-on ...
+ ✓ Compiled /precise-try-on in 1403ms (340 modules)
+ ✓ Compiled in 1ms (340 modules)
+ ✓ Compiled in 1ms (340 modules)
+ ✓ Compiled in 1ms (340 modules)
+ ✓ Compiled in 1ms (340 modules)
+ ✓ Compiled in 0ms (340 modules)
+ ✓ Compiled in 0ms (340 modules)
+ ✓ Compiled in 0ms (340 modules)
+ ✓ Compiled in 1ms (340 modules)
+ ○ Compiling /recommend ...
+ ✓ Compiled /recommend in 1197ms (345 modules)
+ ✓ Compiled in 4.1s (483 modules)
+ ✓ Compiled in 2.6s (818 modules)
+ ✓ Compiled /precise-try-on in 9.4s (818 modules)
+ ✓ Compiled in 1ms (340 modules)
+ ✓ Compiled in 6.4s (823 modules)
+ ✓ Compiled in 5.5s (823 modules)
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 2.3s (811 modules)
+ ✓ Compiled in 6.7s (826 modules)
+ ✓ Compiled in 3.9s (826 modules)
+ GET /quick-try-on 200 in 251ms
+ ✓ Compiled in 2s (483 modules)
+ ✓ Compiled in 965ms (483 modules)
+ ✓ Compiled in 912ms (483 modules)
+ GET /catalog 200 in 146ms
+ ○ Compiling /api/hand-detect ...
+ ✓ Compiled /api/hand-detect in 8s (365 modules)
+ ✓ Compiled (367 modules)
+ POST /api/nail-segment 413 in 13223ms
+ POST /api/hand-detect 200 in 17933ms
+ ✓ Compiled in 5.6s (483 modules)
+ ✓ Compiled in 1802ms (483 modules)
+ ○ Compiling /batch-results ...
+ ✓ Compiled /recommend in 19.3s (850 modules)
+ ✓ Compiled in 1ms (375 modules)
+ ✓ Compiled in 3ms (375 modules)
+ ✓ Compiled in 24ms (375 modules)
+ GET /catalog 200 in 28257ms
+ ✓ Compiled in 0ms (375 modules)
+ ✓ Compiled in 0ms (343 modules)
+ ✓ Compiled in 2ms (343 modules)
+ ✓ Compiled in 0ms (343 modules)
+ ✓ Compiled in 1ms (343 modules)
+ ✓ Compiled in 0ms (343 modules)
+ ✓ Compiled in 1ms (343 modules)
+ ✓ Compiled in 1ms (343 modules)
+ ✓ Compiled in 1ms (343 modules)
+ GET /quick-try-on 200 in 531ms
+ GET /catalog 200 in 58ms
+ GET /quick-try-on 200 in 102ms

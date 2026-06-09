@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>试戴会话卡片排版方案</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: linear-gradient(128deg, #F7E8E2 0%, #FAF0EA 30%, #FCF5EF 65%, #FDFAF7 100%);
+  min-height: 100vh;
+  padding: 40px 32px;
+  font-family: "DM Sans", "PingFang SC", sans-serif;
+}
+.page-title {
+  font-size: 12px;
+  color: rgba(45,26,16,0.4);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.label {
+  font-size: 11px;
+  color: rgba(45,26,16,0.35);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* ── 共用变量 ── */
+.card {
+  border-radius: 18px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(185,120,80,0.14);
+  box-shadow: 0 8px 32px rgba(180,100,50,0.10);
+  overflow: hidden;
+}
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c97a4e;
+}
+.big-num {
+  font-family: "Noto Serif SC", serif;
+  font-weight: 400;
+  color: #2d1a10;
+}
+.copy {
+  font-size: 12px;
+  color: rgba(45,26,16,0.5);
+  line-height: 1.6;
+}
+.chip {
+  padding: 8px 14px;
+  border: 1px solid rgba(140,80,50,0.12);
+  border-radius: 10px;
+  background: #fff;
+  font-size: 13px;
+  color: #2d1a10;
+}
+.upload-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f5e6d8;
+  border: none;
+  font-size: 14px;
+  color: #a85e35;
+  cursor: pointer;
+}
+.main-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  background: #CF6338;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+.ai-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(140,80,50,0.18);
+  background: rgba(255,255,255,0.8);
+  color: #CF6338;
+  cursor: pointer;
+  font-family: "Noto Serif SC", serif;
+}
+
+/* ════════════════════════════════════ */
+/* 方案一：极简居中，大标题 + 竖向堆叠  */
+/* ════════════════════════════════════ */
+.v1 { padding: 28px 24px; display: flex; flex-direction: column; gap: 14px; text-align: center; align-items: center; }
+.v1 .big-num { font-size: 42px; line-height: 1; }
+.v1 .chips { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.v1 .chip { text-align: center; }
+.v1 .ai-btn { font-size: 15px; font-weight: 700; }
+
+/* ════════════════════════════════════ */
+/* 方案二：左对齐标题 + 宽松间距        */
+/* ════════════════════════════════════ */
+.v2 { padding: 24px 22px; display: flex; flex-direction: column; gap: 12px; }
+.v2 .header { display: flex; align-items: baseline; justify-content: space-between; }
+.v2 .big-num { font-size: 34px; }
+.v2 .chips { display: flex; flex-direction: column; gap: 6px; }
+.v2 .chip { font-size: 13px; padding: 9px 12px; }
+.v2 .divider { height: 1px; background: rgba(185,120,80,0.1); }
+.v2 .ai-btn { font-size: 15px; font-weight: 700; letter-spacing: 0.01em; }
+
+/* ════════════════════════════════════ */
+/* 方案三：卡片内分区 + 强调 AI 入口    */
+/* ════════════════════════════════════ */
+.v3 { padding: 0; display: flex; flex-direction: column; }
+.v3 .top-zone { padding: 22px 22px 18px; text-align: center; border-bottom: 1px solid rgba(185,120,80,0.1); }
+.v3 .big-num { font-size: 38px; }
+.v3 .chips { display: flex; flex-direction: column; gap: 6px; padding: 16px 22px; }
+.v3 .chip { font-size: 13px; text-align: center; }
+.v3 .action-zone { padding: 0 22px 22px; display: flex; flex-direction: column; gap: 10px; }
+.v3 .ai-zone {
+  background: linear-gradient(135deg, rgba(201,122,78,0.08), rgba(212,168,67,0.06));
+  border: 1px solid rgba(201,122,78,0.2);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+}
+.v3 .ai-zone .ai-label { font-size: 10px; color: rgba(45,26,16,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.v3 .ai-zone .ai-btn { border: none; background: transparent; font-size: 16px; font-weight: 700; color: #CF6338; padding: 0; }
+
+/* ════════════════════════════════════ */
+/* 方案四：极奢简洁，大号 AI 入口        */
+/* ════════════════════════════════════ */
+.v4 { padding: 28px 24px; display: flex; flex-direction: column; gap: 16px; text-align: center; align-items: center; }
+.v4 .big-num { font-size: 44px; line-height: 1; letter-spacing: -0.01em; }
+.v4 .chips { display: grid; grid-template-columns: 1fr; gap: 7px; width: 100%; }
+.v4 .chip { text-align: center; font-size: 13px; background: rgba(253,250,247,0.9); }
+.v4 .actions { width: 100%; display: flex; flex-direction: column; gap: 10px; }
+.v4 .ai-btn {
+  font-size: 17px;
+  font-weight: 700;
+  padding: 15px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(207,99,56,0.06), rgba(212,168,67,0.04));
+  border: 1.5px solid rgba(207,99,56,0.22);
+  letter-spacing: 0.01em;
+}
+</style>
+</head>
+<body>
+<div class="page-title">试戴会话卡片 · 排版设计方案对比</div>
+<div class="grid">
+
+  <!-- 方案一 -->
+  <div>
+    <div class="label">方案一 · 极简居中</div>
+    <div class="card v1">
+      <div class="eyebrow">试戴会话</div>
+      <div class="big-num">已选 3 款</div>
+      <div class="copy">再上传一张手图，就能生成试戴效果。</div>
+      <div class="chips" style="width:100%">
+        <div class="chip">白开水美甲</div>
+        <div class="chip">抽象油画手绘美甲</div>
+        <div class="chip">baby蓝猫眼夏日甲</div>
+      </div>
+      <button class="upload-btn">上传手图</button>
+      <button class="main-btn">一键生成试戴</button>
+      <button class="ai-btn" style="font-size:15px;font-weight:700;">让 AI 帮我选款式</button>
+    </div>
+  </div>
+
+  <!-- 方案二 -->
+  <div>
+    <div class="label">方案二 · 左对齐宽松</div>
+    <div class="card v2">
+      <div class="header">
+        <div>
+          <div class="eyebrow">试戴会话</div>
+          <div class="big-num">已选 3 款</div>
+        </div>
+      </div>
+      <div class="copy">再上传一张手图，就能生成试戴效果。</div>
+      <div class="chips">
+        <div class="chip">白开水美甲</div>
+        <div class="chip">抽象油画手绘美甲</div>
+        <div class="chip">baby蓝猫眼夏日甲</div>
+      </div>
+      <div class="divider"></div>
+      <button class="upload-btn">上传手图</button>
+      <button class="main-btn">一键生成试戴</button>
+      <button class="ai-btn" style="font-size:15px;font-weight:700;text-align:center;">让 AI 帮我选款式</button>
+    </div>
+  </div>
+
+  <!-- 方案三 -->
+  <div>
+    <div class="label">方案三 · 分区 + AI 强调</div>
+    <div class="card v3">
+      <div class="top-zone">
+        <div class="eyebrow">试戴会话</div>
+        <div class="big-num" style="margin:6px 0 8px">已选 3 款</div>
+        <div class="copy">再上传一张手图，就能生成试戴效果。</div>
+      </div>
+      <div class="chips">
+        <div class="chip">白开水美甲</div>
+        <div class="chip">抽象油画手绘美甲</div>
+        <div class="chip">baby蓝猫眼夏日甲</div>
+      </div>
+      <div class="action-zone">
+        <button class="upload-btn">上传手图</button>
+        <button class="main-btn">一键生成试戴</button>
+        <div class="ai-zone">
+          <div class="ai-label">AI 智能推荐</div>
+          <button class="ai-btn">让 AI 帮我选款式</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 方案四 -->
+  <div>
+    <div class="label">方案四 · 极奢大 AI 入口</div>
+    <div class="card v4">
+      <div class="eyebrow">试戴会话</div>
+      <div class="big-num">已选 3 款</div>
+      <div class="copy" style="font-size:13px">再上传一张手图，就能生成试戴效果。</div>
+      <div class="chips" style="width:100%">
+        <div class="chip">白开水美甲</div>
+        <div class="chip">抽象油画手绘美甲</div>
+        <div class="chip">baby蓝猫眼夏日甲</div>
+      </div>
+      <div class="actions">
+        <button class="upload-btn">上传手图</button>
+        <button class="main-btn">一键生成试戴</button>
+        <button class="ai-btn">让 AI 帮我选款式</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
