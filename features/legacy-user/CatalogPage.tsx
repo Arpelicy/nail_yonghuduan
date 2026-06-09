@@ -287,7 +287,7 @@ export default function CatalogPage() {
               </div>
 
               <div className="hero-preview reveal" data-reveal="scale" data-reveal-delay="200" aria-label="真实美甲预览">
-                <img src="/assets/nail-hero.png" alt="手部美甲试戴示例" />
+                <img src="/user/assets/nail-hero.png" alt="手部美甲试戴示例" />
               </div>
             </section>
 

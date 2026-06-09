@@ -142,7 +142,7 @@ export default function RecommendPage() {
             <label className="photo-chip">
               <input type="file" accept="image/*" capture="environment" />
               <span className="align-guide">
-                <img className="hand-guide-overlay" src="/assets/hand-guide-outline.png" alt="" />
+                <img className="hand-guide-overlay" src="/user/assets/hand-guide-outline.png" alt="" />
                 <small>手掌对准线框拍摄</small>
               </span>
             </label>

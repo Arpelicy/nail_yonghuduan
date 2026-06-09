@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>按钮字体对比</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500&family=ZCOOL+XiaoWei&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #FAF0EA;
+    font-family: 'PingFang SC', sans-serif;
+    padding: 48px 56px;
+    min-height: 100vh;
+    color: #2d1a10;
+  }
+  h1 {
+    font-size: 13px;
+    font-weight: 500;
+    color: #a0806a;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(180,100,50,0.10);
+  }
+  .row:last-child { border-bottom: none; }
+  .label {
+    width: 150px;
+    flex-shrink: 0;
+    font-size: 12px;
+    color: #a0806a;
+    line-height: 1.6;
+  }
+  .label strong { display: block; font-size: 15px; color: #2d1a10; font-weight: 600; margin-bottom: 2px; }
+  .samples {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* ── 版本A 站酷快乐体 ── */
+  .a { font-family: 'ZCOOL KuaiLe', 'PingFang SC', sans-serif; font-weight: 400; letter-spacing: 0.03em; }
+  /* ── 版本B 思源宋体 ── */
+  .b { font-family: 'Noto Serif SC', serif; font-weight: 500; letter-spacing: 0.06em; }
+  /* ── 版本C PingFang 宽字距 ── */
+  .c { font-family: 'PingFang SC', 'Noto Sans SC', sans-serif; font-weight: 500; letter-spacing: 0.10em; }
+  /* ── 版本D 站酷小薇 ── */
+  .d { font-family: 'ZCOOL XiaoWei', 'PingFang SC', sans-serif; font-weight: 400; letter-spacing: 0.08em; }
+
+  .btn-primary {
+    background: #c97a4e; color: #fff; border: none;
+    border-radius: 10px; padding: 10px 22px; font-size: 14px; cursor: default;
+  }
+  .btn-ghost {
+    background: #f5e6d8; color: #c97a4e;
+    border: 1px solid #e8c8b0;
+    border-radius: 10px; padding: 10px 22px; font-size: 14px; cursor: default;
+  }
+  .btn-link {
+    background: transparent; color: #c97a4e; border: none;
+    padding: 10px 4px; font-size: 14px; cursor: default;
+  }
+  .tag {
+    background: #fff; border: 1px solid #e8c8b0;
+    border-radius: 99px; padding: 7px 16px; font-size: 13px; color: #2d1a10;
+  }
+  .outline-btn {
+    background: transparent; border: 1px solid #e8c8b0;
+    border-radius: 8px; padding: 7px 20px; font-size: 13px; color: #2d1a10; cursor: default;
+  }
+  .input-mock {
+    background: #fff; border: 1px solid #e8c8b0;
+    border-radius: 8px; padding: 10px 14px; font-size: 13px; color: #a0806a;
+    min-width: 200px;
+  }
+</style>
+</head>
+<body>
+<h1>按钮字体方案对比 · 指尖灵感</h1>
+
+<!-- A -->
+<div class="row">
+  <div class="label"><strong>A</strong>站酷快乐体<br>圆润可爱</div>
+  <div class="samples">
+    <button class="btn-primary a">一键生成试戴</button>
+    <button class="btn-ghost a">上传手部照片</button>
+    <button class="btn-link a">让 AI 帮我选款式</button>
+    <span class="tag a">猫眼显白</span>
+    <span class="tag a">通勤短甲</span>
+    <span class="outline-btn a">进入款式库 →</span>
+    <span class="input-mock a">搜索猫眼、通勤、显白、短甲</span>
+  </div>
+</div>
+
+<!-- B -->
+<div class="row">
+  <div class="label"><strong>B</strong>思源宋体<br>优雅高级</div>
+  <div class="samples">
+    <button class="btn-primary b">一键生成试戴</button>
+    <button class="btn-ghost b">上传手部照片</button>
+    <button class="btn-link b">让 AI 帮我选款式</button>
+    <span class="tag b">猫眼显白</span>
+    <span class="tag b">通勤短甲</span>
+    <span class="outline-btn b">进入款式库 →</span>
+    <span class="input-mock b">搜索猫眼、通勤、显白、短甲</span>
+  </div>
+</div>
+
+<!-- C -->
+<div class="row">
+  <div class="label"><strong>C</strong>PingFang SC<br>清爽现代</div>
+  <div class="samples">
+    <button class="btn-primary c">一键生成试戴</button>
+    <button class="btn-ghost c">上传手部照片</button>
+    <button class="btn-link c">让 AI 帮我选款式</button>
+    <span class="tag c">猫眼显白</span>
+    <span class="tag c">通勤短甲</span>
+    <span class="outline-btn c">进入款式库 →</span>
+    <span class="input-mock c">搜索猫眼、通勤、显白、短甲</span>
+  </div>
+</div>
+
+<!-- D -->
+<div class="row">
+  <div class="label"><strong>D</strong>站酷小薇<br>纤细轻奢</div>
+  <div class="samples">
+    <button class="btn-primary d">一键生成试戴</button>
+    <button class="btn-ghost d">上传手部照片</button>
+    <button class="btn-link d">让 AI 帮我选款式</button>
+    <span class="tag d">猫眼显白</span>
+    <span class="tag d">通勤短甲</span>
+    <span class="outline-btn d">进入款式库 →</span>
+    <span class="input-mock d">搜索猫眼、通勤、显白、短甲</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -157,6 +157,41 @@ input {
   font: inherit;
 }
 
+/* ── 按钮/输入框统一使用思源宋体（方案02）─────────────────────────────────── */
+button,
+input,
+select,
+textarea,
+a.tab,
+a.primary-action,
+a.secondary-action,
+a.ghost-action,
+.tab,
+.select-action,
+.primary-action,
+.secondary-action,
+.ghost-action,
+.session-ai-btn,
+label.basket-upload span,
+.home-style-rail button,
+.quick-prompts button,
+.filter-btn,
+.confirm-btn,
+.cancel-btn {
+  font-family: 'Noto Serif SC', 'PingFang SC', sans-serif !important;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+/* ── ghost-action / secondary-action 文字居中（Link 组件渲染为 <a>）── */
+.ghost-action,
+a.ghost-action,
+a.secondary-action {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
 /* ── animations ─────────────────────────────────────────────────────────────── */
 
 @keyframes fade-in {
