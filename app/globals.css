@@ -111,6 +111,11 @@
 
 /* ── Hint bar attention pulse ────────────────────────────────────────────────── */
 
+@keyframes tw-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
 @keyframes hint-in {
   from { opacity: 0; transform: translateY(-4px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -215,6 +220,45 @@ input {
   animation: shimmer 1.6s linear infinite;
 }
 
+/* ── 滚动触发入场 (.reveal → .revealed) ─────────────────────────────────────── */
+/*
+ * 三档入场姿势，通过 data-reveal 属性切换：
+ *   默认            → fade up（向上淡入）
+ *   data-reveal="left"  → 从左滑入
+ *   data-reveal="scale" → 缩放弹入
+ * 配合 data-reveal-delay="100|200|300|400|500" 做级联延迟。
+ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(48px);
+  transition:
+    opacity 0.72s var(--ease-out-expo),
+    transform 0.72s var(--ease-out-expo);
+  will-change: opacity, transform;
+}
+
+.reveal[data-reveal="left"] {
+  transform: translateX(-56px);
+}
+
+.reveal[data-reveal="scale"] {
+  transform: scale(0.88) translateY(24px);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal[data-reveal-delay="100"] { transition-delay: 100ms; }
+.reveal[data-reveal-delay="200"] { transition-delay: 200ms; }
+.reveal[data-reveal-delay="300"] { transition-delay: 300ms; }
+.reveal[data-reveal-delay="400"] { transition-delay: 400ms; }
+.reveal[data-reveal-delay="500"] { transition-delay: 500ms; }
+.reveal[data-reveal-delay="600"] { transition-delay: 600ms; }
+.reveal[data-reveal-delay="700"] { transition-delay: 700ms; }
+
 /* ── reduced motion ─────────────────────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
@@ -223,6 +267,7 @@ input {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+  .reveal { opacity: 1; transform: none; transition: none; }
 }
 
 /* ── scrollbar-soft（运营端同款 5px）── */

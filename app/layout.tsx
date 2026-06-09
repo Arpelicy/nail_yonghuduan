@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
 import TopNav from "@/components/layout/TopNav";
 import TryOnAssistant from "@/components/TryOnAssistant";
+import ScrollReveal from "@/components/ScrollReveal";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <TopNav />
+        <ScrollReveal />
         {children}
         <TryOnAssistant />
       </body>

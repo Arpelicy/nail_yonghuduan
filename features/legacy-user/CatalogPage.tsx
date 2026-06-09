@@ -6,6 +6,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Check, X } from "lucide-react";
 
 import { GhostButton, GradientButton } from "@/components/ui";
+import TypeWriter from "@/components/TypeWriter";
 import { nailStyles } from "./nailStyles";
 import { useSelectedIds } from "./useSelectedIds";
 
@@ -46,7 +47,11 @@ function HomePickCard({
   index: number;
 }) {
   return (
-    <article className="home-pick-card" data-style-id={item.id} style={{ "--i": index } as CSSProperties}>
+    <article
+      className="home-pick-card"
+      data-style-id={item.id}
+      style={{ "--i": index } as CSSProperties}
+    >
       <button
         className={`nail-thumb home-pick-thumb ${item.image ? "has-image" : ""}`}
         style={{ "--thumb": item.thumb, "--nail": item.nail, "--accent": item.accent } as CSSProperties}
@@ -258,13 +263,15 @@ export default function CatalogPage() {
         <section className="page active" id="home" aria-labelledby="home-title">
           <div className="product-home">
             <section className="tryon-workbench" aria-label="AI 试戴工作台">
-              <div className="workbench-copy">
+              <div className="workbench-copy reveal" data-reveal="left" data-reveal-delay="100">
                 <p className="eyebrow">AI Nail Try-On</p>
-                <h1 id="home-title">找到适合今天的美甲</h1>
+                <h1 id="home-title">
+                  <TypeWriter text="找到适合今天的美甲" speed={90} delay={400} />
+                </h1>
                 <p>先挑 1-4 款，再上传一张手图生成试戴效果。结果可直接加入想做或确认做。</p>
               </div>
 
-              <div className="workbench-search" role="search">
+              <div className="workbench-search reveal" data-reveal-delay="300" role="search">
                 <label htmlFor="homeSearch">搜索款式</label>
                 <div className="search-field">
                   <span aria-hidden="true">⌕</span>
@@ -279,12 +286,12 @@ export default function CatalogPage() {
                 </div>
               </div>
 
-              <div className="hero-preview" aria-label="真实美甲预览">
+              <div className="hero-preview reveal" data-reveal="scale" data-reveal-delay="200" aria-label="真实美甲预览">
                 <img src="/assets/nail-hero.png" alt="手部美甲试戴示例" />
               </div>
             </section>
 
-            <aside className="tryon-basket session-panel" id="tryonBasket" aria-label="当前试戴会话">
+            <aside className="tryon-basket session-panel reveal" data-reveal-delay="500" id="tryonBasket" aria-label="当前试戴会话">
               <div className="session-head">
                 <span>试戴会话</span>
                 <strong>已选 {selectedItems.length} 款</strong>
@@ -313,7 +320,7 @@ export default function CatalogPage() {
             </aside>
           </div>
 
-          <div className="section-head home-picks-head">
+          <div className="section-head home-picks-head reveal">
             <div>
               <p className="eyebrow">Today Picks</p>
               <h2>先试这几款</h2>
