@@ -1,0 +1,25 @@
+node_modules/
+interesting.next/
+*.tsbuildinfo
+.DS_Store
+*.local
+.env*
+# deepseek-key.txt 是模板，填入真实key后不应提交
+# 通过 git update-index --assume-unchanged 在本地忽略修改
+
+# ── 构建产物 ──────────────────────────────────────
+admin-ops/dist/
+
+# ── 脚本生成的数据（run_all.sh 重新生成） ──────────
+user-client/outputs/simulation/
+user-client/db/nail_simulation.sqlite
+user-client/db/mock-analytics.json
+user-client/db/recommend-sync-state.json
+admin-ops/styles.db
+admin-ops/styles.db-shm
+admin-ops/styles.db-wal
+
+# ── 运行时产生的用户数据 ───────────────────────────
+user-client/outputs/analysis-results/
+user-client/outputs/generated-results/
+user-client/uploads/
